@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Para integrar un parcial de EJS en otro archivo.Para indicar a EJS que 
+    renderice HTML sin formato. La ruta al parcial es relativa al archivo actual.-->
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>Top Mascots</h1>
+ <!--Renderizar una variable única en EJS. Para hacer eco de una variable -->
+            <p> 
+                <%= tagline %> 
+            </p>
+            <ul>
+ <!-- Hacer bucle sobre los datos en EJS. Para hacer bucle sobre nuestros datos usaremos .forEach -->
+                <% mascots.forEach(function(mascot) { %>
+                    <li>
+                        <strong><%= mascot.name %></strong>
+                        representing <%= mascot.organization %>, born <%= mascot.birth_year %>
+                    </li>
+                <% }); %>
+            </ul>
+    </div>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>
+
+<!-- Ahora tenemos nuestros parciales definidos. Lo único que debemos hacer es 
+    incluirlos en nuestras vistas. Ahora veremos index.ejs y about.ejs y usaremos la 
+    sintaxis include para añadir los parciales. -->
