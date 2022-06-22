@@ -1,0 +1,57 @@
+
+
+.Genericocontac { 
+width: 100vw;
+height: 100vh;
+background-color: #8f8a8a;
+position: fixed;
+ top: 0%;
+ bottom: 0%;
+ z-index: -1;
+};
+
+.Formulariocontac {
+ margin: 0 auto;
+ width: 600px;
+ padding: 1em;
+ border: 1px solid #ccc;
+ border-radius: 1em;
+ margin-top: 1em;
+};
+
+.Celdacontac {
+width: 260px;
+};
+
+.Rectangulocontac {
+ width: 250px;
+ position: fixed;
+};
+
+.Textocontac {
+ font: 1em sans-serif;
+ width: 300px;
+ box-sizing: border-box;
+ border-color: white;
+ height: 2em;
+};
+
+.Botoncontac {
+ margin-left: 11em;
+};
+
+.Contenedorcontac {
+ display: flex;
+ justify-content: center;
+ align-content: center;
+ position: fixed;
+ right: 10%;
+ margin-top: 10%;
+ justify-content: space-between;
+};
+
+.Palabracontac {
+ font-family: Kunstler Script;
+ color: #063a35;
+ font-size: 36pt;
+};

@@ -1,42 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-  <!-- Para integrar un parcial de EJS en otro archivo.Para indicar a EJS que 
-    renderice HTML sin formato. La ruta al parcial es relativa al archivo actual.-->
-  <%- include('../ejs/head.ejs'); %>
+    <%- include ('../componentes/ejs/head') %> 
 </head>
 
-<body class="container">
-
+<body>
   <header>
-    <%- include('../ejs/header.ejs'); %>
+    <%- include ('../componentes/ejs/header') %> 
   </header>
-
-  <main>
-    <div class="jumbotron">
-      <h1>Top Mascots</h1>
-      <!--Renderizar una variable única en EJS. Para hacer eco de una variable -->
-      <p>
-        <%= tagline %>
-      </p>
-      <ul>
-        <!-- Hacer bucle sobre los datos en EJS. Para hacer bucle sobre nuestros datos usaremos .forEach -->
-        <% mascots.forEach(function(mascot) { %>
-          <li>
-            <strong>
-              <%= mascot.name %>
-            </strong>
-            representing <%= mascot.organization %>, born <%= mascot.birth_year %>
-          </li>
-          <% }); %>
-      </ul>
-    </div>
+  <main> 
+    
   </main>
-
-  <footer>
-    <%- include('../ejs/footer.ejs'); %>
-  </footer>
+    <footer>
+    <%- include('../componentes/ejs/footer') %> 
+</footer>
 
 </body>
 
