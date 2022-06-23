@@ -1,31 +1,24 @@
-
-.HeaderbotonInico {
-right: 7%;
-justify-content: center;
-};
-
 .Navnombre {
-background-color: #d78c0e52;
-display: flex;
-justify-content: space-around;
-flex-direction: column;
-width: 85vw;
-height: 30vh;
-align-items: center;
-margin: 2px;
-border-radius: 20px;
-};
+  background-color: #d78c0e52;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 2px;
+  border-radius: 20px;
+  width: 100vw;
+  height: 8vh;
+}
 
 .Minombre {
-justify-content: space-between;
-font-family: Vladimir Script;
-color: #063a35;
-font-size: 48pt;
-};
+  justify-content: space-between;
+  font-family: Vladimir Script;
+  color: #063a35;
+  font-size: 48pt;
+}
 
 .NombreLinks {
-justify-content: space-between;
-font-family: Kunstler Script;
-font-size: 36pt;
-color: goldenrod;
-};
+  justify-content: space-between;
+  font-family: Kunstler Script;
+  font-size: 36pt;
+  color: #6141e3;
+}

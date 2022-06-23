@@ -1,6 +1,13 @@
 .Copyright {
+  display: inline-flex;
   text-align: left;
+  margin: 0 15px;
+  height: 35px;
+  font-size: 20px;
 }
 .Instagram {
-  text-align: right;
+  display: inline-flex;
+  margin: 0 275px;
+  padding: 0 10px;
+  height: 35px;
 }

@@ -1,35 +1,75 @@
-
+/**body {
+  display: grid;
+  grid-template-rows: 1fr 2fr 4fr 1fr;
+  grid-template-columns: 2fr 2fr 2fr;
+  background-color: #b5b0b0;
+  height: 100vh;
+  width: 100vh;
+  margin: 0;
+}
+nav {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 4;
+}
+div {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+main {
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+footer {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 4;
+}*/
 .Generalsobremi {
-display: flex;
-flex-direction: column;
-width: 98%;
-height: 98%;
-text-align: justify;
-background-color: #b5b0b0;
-};
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  background-color: #b5b0b0;
+  margin: 0;
+}
 
 .Fotoyo1 {
-    content: url("/static/imagenes/autoretrato/yo.jpg");
-    width: 20%;
-    border-radius: 5px;
-    margin: 45px;
-};
+  content: url("/static/imagenes/autoretrato/yo.jpg");
+  display: flex;
+  height: 20%;
+  border-radius: 5px;
+  margin: 0 3px;
+  align-items: center;
+}
 
 .Fotoyo2 {
-width: 17%;
-border-radius: 5px;
-margin: 45px;
-};
+  content: url("/static/imagenes/autoretrato/yoperu.jpg");
+  display: flex;
+  height: 20%;
+  border-radius: 5px;
+  margin: 0 3px;
+  align-items: center;
+}
 
 .Fotoyo3 {
-width: 35%;
-border-radius: 5px;
-margin:45px;
-};
+  content: url("/static/imagenes/autoretrato/yop.jpg");
+  display: flex;
+  height: 20%;
+  border-radius: 5px;
+  margin: 0 3px;
+  align-items: center;
+}
 
 .Textosobremi {
-display: flex;
-flex-direction: column;
-margin-left: 20px;
-margin-right: 20px;
-};
+  grid-column-start: 1;
+  grid-column-end: 4;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  margin-left: 20px;
+  margin-right: 20px;
+  flex-wrap: wrap;
+  text-align: justify;
+}
