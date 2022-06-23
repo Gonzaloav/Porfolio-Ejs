@@ -9,13 +9,15 @@ background-color: #b5b0b0;
 };
 
 .Fotoyo1 {
-width: 20%;
-border-radius: 5px;
-margin: 45px;
+    content: url("/static/imagenes/autoretrato/yo.jpg");
+    width: 20%;
+    border-radius: 5px;
+    margin: 45px;
 };
 
 .Fotoyo2 {
-width: 17%;border-radius: 5px;
+width: 17%;
+border-radius: 5px;
 margin: 45px;
 };
 
