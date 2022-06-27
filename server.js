@@ -2,7 +2,12 @@
 
 // Creamos enlace que necesitamos
 const express = require("express");
+import { postFotosController } from "./controllers/tablasPorfolio/fotoscontrollers.mjs";
+
 const app = express();
+
+const jsonParser = express.json ();
+
 
 // establecer el motor de visualización en ejs. (use res.render) para cargar un archivo de  "ejs view ""
 app.set("view engine", "ejs");
@@ -24,6 +29,9 @@ app.get("/sobremi", function (req, res) {
 app.get("/contacto", function (req, res) {
   res.render("./paginas/contacto");
 });
+
+
+app.post (PATH_FREFIX + "/porfolio/foto/", jsonParser,  postFotosController );
 
 app.listen(8080);
 console.log("8080 este es el puerto mágico");
