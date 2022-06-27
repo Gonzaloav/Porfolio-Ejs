@@ -1,5 +1,5 @@
 .Navnombre {
-  background-color: #d78c0e52;
+  background-color: #c3dbc2c4;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -21,4 +21,8 @@
   font-family: Kunstler Script;
   font-size: 36pt;
   color: #6141e3;
+}
+
+:root {
+  background-color: black;
 }
