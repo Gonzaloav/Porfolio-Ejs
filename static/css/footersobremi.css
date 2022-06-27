@@ -1,21 +1,5 @@
-.Copyright {
-  display: inline-flex;
-  text-align: left;
-  margin: 0 15px;
-  height: 35px;
-  font-size: 20px;
-  color: white;
-  font-family: "Courier New";
-}
-.Instagram {
-  display: inline-flex;
-  margin: 0 275px;
-  padding: 0 10px;
-  height: 35px;
-}
-
 .Contenedorfooter {
-  background-color: #d78c0e00;
+  background-color: #b5b0b0;
   display: flex;
   justify-content: flex-end;
   margin: 2px;
@@ -23,5 +7,19 @@
   width: 98vw;
   height: 4vh;
   position: absolute;
-  top: 94%;
+}
+.Copyright {
+  display: inline-flex;
+  margin: 0 15px;
+  height: 35px;
+  font-size: 20px;
+  color: white;
+  font-family: "Courier New";
+  align-items: center;
+}
+.Instagram {
+  display: inline-flex;
+  margin: 0 275px;
+  padding: 0 10px;
+  height: 35px;
 }
