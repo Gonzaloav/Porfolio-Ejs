@@ -1,9 +1,10 @@
+
 .Genericocontac {
-  width: 100vw;
-  height: 75vh;
+  width: 98vw;
+  height: 89vh;
   background-color: #8f8a8a;
-  top: 0%;
-  bottom: 0%;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 1em;
   z-index: -1;
 }
 
@@ -33,20 +34,19 @@
 }
 
 .Botoncontac {
-  margin-left: 11em;
-}
-
-.Contenedorcontac {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  right: 10%;
-  margin-top: 10%;
-  justify-content: space-between;
+  margin-left: 6em;
 }
 
 .Palabracontac {
   font-family: Kunstler Script;
-  color: #063a35;
-  font-size: 36pt;
+  color: #021917;
+  font-size: 50pt;
+  display: flex;
+  justify-content: center;
+}
+
+.labelcontac {
+  font-family: Kunstler Script;
+  color: #021917;
+  font-size: 32pt;
 }

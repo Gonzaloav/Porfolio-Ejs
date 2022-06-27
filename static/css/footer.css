@@ -11,3 +11,14 @@
   padding: 0 10px;
   height: 35px;
 }
+
+.Contenedorfooter {
+  background-color: #d78c0e00;
+  display: flex;
+  margin: 2px;
+  border-radius: 20px;
+  width: 98vw;
+  height: 4vh;
+  position: absolute;
+  top: 94%;
+}
