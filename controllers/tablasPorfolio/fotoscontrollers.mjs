@@ -1,5 +1,5 @@
 import db from "../../sqlModels/db.mjs";
-import { postFotosSQL } from "../../sqlModels/porfolioSQL/fotosSqlModels.mjs"
+import { postFotosSQL, getAllFotosSQL } from "../../sqlModels/porfolioSQL/fotosSqlModels.mjs"
 
 // Añadir fotos
 export function postFotosController(request, response) {
@@ -20,3 +20,19 @@ export function postFotosController(request, response) {
       requestError(err, response)
   }
 }
+
+// Obtiene lista fotos
+export function getAllFotosController(request, response) {
+    try {
+      db.all(
+        getAllFotosSQL, // response.locals.authorization.id_fotos,
+          (err,data)=>{
+              if ( err ) throw err
+              return data
+          }
+      )
+    } catch (err) {
+        requestError(err, response)
+      }
+} 
+  

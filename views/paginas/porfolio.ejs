@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include ('../componentes/ejs/head') %> 
+        
+        <script src="/static/js/miniaturas.mjs" type="module" ></script>
+        <link rel="stylesheet" href="/static/css/navinicio.css">
+        <link rel="stylesheet" href="/static/css/footer.css">  
+    </head>
+<body>
+    <header>
+        <%- include ('../componentes/ejs/nav') %> 
+      </header>
+      <main> 
+
+        <ul>
+    <% fotos.forEach(function(foto) { %>
+        <li>
+            <%= foto.id_foto %>
+            <%= foto.file %>
+            <%= foto.galeria_foto %>
+        </li>
+    <% }); %>
+        </ul>
+
+      </main>
+        <footer>
+            <%- include('../componentes/ejs/footer') %> 
+     </footer>
+</body>
+</html>
+
+
+
+
