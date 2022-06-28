@@ -1,6 +1,11 @@
 import express from "express";
 import db from "./sqlModels/db.mjs";
-import { getAllFotosSQL } from "./sqlModels/porfolioSQL/fotosSqlModels.mjs";
+import multer from 'multer' 
+
+const UPLOADS_FOLDER = "./uploads/"
+const upload = multer({ dest: UPLOADS_FOLDER })
+
+import { getAllFotosSQL, postFotosSQL } from "./sqlModels/porfolioSQL/fotosSqlModels.mjs";
 import { postFotosController } from "./controllers/tablasPorfolio/fotoscontrollers.mjs";
 
 // Creamos enlace que necesitamos
@@ -30,6 +35,30 @@ app.get("/contacto", function (req, res) {
   res.render("./paginas/contacto");
 });
 
+// Página Porfolio
+app.get("/porfolio", function (req, res) {
+  res.render("./paginas/porfolio");
+});
+
+// Formulario para recibir las fotos desde la base de datos. 
+
+app.get("/photos/new", function (req, res) {
+  res.render("./paginas/newPhotoForm");
+})
+
+// Formulario para enviar las fotos a la base de datos.
+
+app.post("/photos/new", upload.array('file'), function (req, res) {
+//console.log("Files:", req.files);     console.log("Body:", req.body)
+  req.files.forEach(
+    file => db.run(postFotosSQL,[file.filename,req.body.galeria_fotos], 
+      function (err) {
+        if (err) console.error(err)
+    })
+  )
+  res.sendStatus(201)
+})
+
 // Galería ejemplo
 app.get("/ejemploporfolio", function (req, res) {
   db.all(
@@ -43,6 +72,7 @@ app.get("/ejemploporfolio", function (req, res) {
 });
 
 app.post(PATH_FREFIX + "/porfolio/foto/", jsonParser, postFotosController);
+
 
 app.listen(3000);
 console.log("3000 este es el puerto mágico");

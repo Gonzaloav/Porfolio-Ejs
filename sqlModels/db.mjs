@@ -34,9 +34,10 @@ db.run(`
     CREATE TABLE
         IF NOT EXISTS
         fotos(
-            galeria_fotos INTEGER PRIMARY KEY,
-            id_fotos INTEGER NOT NULL,
-            file VARCHAR (255) NOT NULL        
+            id_fotos INTEGER PRIMARY KEY,
+             file VARCHAR (255) NOT NULL,      
+             galeria_fotos INTEGER NOT NULL
+             
         )
 `);
 
