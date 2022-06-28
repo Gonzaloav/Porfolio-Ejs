@@ -3,6 +3,10 @@
 export const getAllFotosSQL = 
     `SELECT  id_fotos, file, galeria_fotos FROM fotos`;
 
+export const getGalleryFotosSQL = 
+    `SELECT  id_fotos, file, galeria_fotos FROM fotos WHERE galeria_fotos = ?`;
+
+
 export const postFotosSQL = 
     //`INSERT INTO fotos (id_fotos, file, galeria_fotos) VALUES (?, ?, ?)`;
     `INSERT INTO fotos (file, galeria_fotos) VALUES (?, ?)`;

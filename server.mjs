@@ -5,7 +5,7 @@ import multer from 'multer'
 const UPLOADS_FOLDER = "./uploads/"
 const upload = multer({ dest: UPLOADS_FOLDER })
 
-import { getAllFotosSQL, postFotosSQL } from "./sqlModels/porfolioSQL/fotosSqlModels.mjs";
+import { getAllFotosSQL, postFotosSQL, getGalleryFotosSQL } from "./sqlModels/porfolioSQL/fotosSqlModels.mjs";
 import { postFotosController } from "./controllers/tablasPorfolio/fotoscontrollers.mjs";
 
 // Creamos enlace que necesitamos
@@ -19,6 +19,10 @@ app.set("view engine", "ejs");
 
 // Endpoint para descarga de ficheros estáticos.
 app.use("/static/", express.static("./static/"));
+
+// Endpoint para descarga de fotos.
+app.use("/photos/", express.static("./uploads/"));
+
 
 // Página index
 app.get("/", function (req, res) {
@@ -67,6 +71,29 @@ app.get("/ejemploporfolio", function (req, res) {
       if (err) throw err;
       console.log(fotos);
       res.render("./paginas/porfolio", { fotos });
+    }
+  );
+});
+
+
+// Galería ejemplo en filas
+app.get("/ejemploporfoliofilas/:galeria_fotos", function (req, res) {
+  db.all(
+    getGalleryFotosSQL,
+    [req.params.galeria_fotos],
+    (err, fotos) => {
+      if (err) throw err;
+      const FOTOS_POR_FILA = 5
+      const filas = []
+      for (let inicioFila = 0; inicioFila < fotos.length; inicioFila += FOTOS_POR_FILA) {
+        const fila = []
+        for (let fotoFila = inicioFila; fotoFila < inicioFila+FOTOS_POR_FILA && fotoFila < fotos.length; fotoFila++) {
+          fila.push(fotos[fotoFila])
+        }
+        filas.push(fila)
+      }
+      console.log(filas);
+      res.render("./paginas/porfolioEnFilas", { filas });
     }
   );
 });
