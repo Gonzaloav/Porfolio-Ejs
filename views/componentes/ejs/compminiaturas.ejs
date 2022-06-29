@@ -1,0 +1,18 @@
+<main>
+
+  <!-- Buscamos la galeria entre los diferentes Arrys -->
+
+  <div class="Galeria">
+    <% filas.forEach( function(fila) { %>
+
+      <!-- Ahora que tenemos la galeria buscamos las fotos para hacer filas -->
+
+      <div class="Fila">
+        <% fila.forEach(function(foto) { %>
+          <img src="/photos/<%= foto.file %>" alt="<%= foto.file %>">
+          <% }); %>
+      </div>
+      <% }); %>
+  </div>
+
+</main>

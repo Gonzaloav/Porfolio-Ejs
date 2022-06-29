@@ -8,28 +8,26 @@
         <link rel="stylesheet" href="/static/css/porfoliominiaturas.css">
     </head>
 <body>
-    <header>
-        <%- include ('../componentes/ejs/nav') %> 
-      </header>
+  <header>
+    <%- include ('../componentes/ejs/nav') %>
+  </header>
 
-      <main> 
-        <ul>
-            <% fotos.forEach(function(foto) { %>
-                <img src="/photos/<%= foto.file %>" alt="...">
-                <li>
-                    <%= foto.id_foto %>
-                    <%= foto.galeria_foto %>
-                </li>
-            <% }); %>
-        </ul>
-      </main>
+  <main>
+    <!-- Colocamos las fotos en cada fila. -->
+  <ul>
+    <% fotos.forEach(function(foto) { %>
+      <img src="/photos/<%= foto.file %>" alt="...">
+      <li>
+        <%= foto.id_foto %>
+          <%= foto.galeria_foto %>
+      </li>
+      <% }); %>
+  </ul>
+  </main>
 
-        <footer>
-            <%- include('../componentes/ejs/footer') %> 
-     </footer>
+  <footer>
+    <%- include('../componentes/ejs/footer') %>
+  </footer>
 </body>
+
 </html>
-
-
-
-
