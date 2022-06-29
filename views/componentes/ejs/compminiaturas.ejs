@@ -9,8 +9,10 @@
 
       <div class="Fila">
         <% fila.forEach(function(foto) { %>
-          <img src="/photos/<%= foto.file %>" alt="<%= foto.file %>">
-          <% }); %>
+          <div class="Img">
+              <img src="/photos/<%= foto.file %>" alt="<%= foto.file %>">
+          </div>
+        <% }); %>
       </div>
       <% }); %>
   </div>
