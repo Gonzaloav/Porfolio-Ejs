@@ -103,7 +103,7 @@ app.post(PATH_FREFIX + "/porfolio/foto/", jsonParser, postFotosController);
 app.listen(3000);
 console.log("3000 este es el puerto mágico");
 
-// http://localhost:8080/
+// http://localhost:3000/
 
 /** Pasar datos a Vistas y Parciales.- Index.ejs
 Vamos a definir algunas variables básicas y una lista para pasar a nuestra página 
