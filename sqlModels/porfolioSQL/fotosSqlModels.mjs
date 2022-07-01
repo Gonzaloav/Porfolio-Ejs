@@ -1,7 +1,7 @@
 export const getAllFotosSQL = `SELECT  id_fotos, file, galeria_fotos FROM fotos`;
 
 // Para galeria con filas en server. Recibir las fotos y ponerlas en filas.
-export const getGalleryFotosSQL = `SELECT  id_fotos, file, galeria_fotos FROM fotos WHERE galeria_fotos = ?`;
+export const getGalleryFotosSQL = `SELECT  id_fotos, file, galeria_fotos, ratio FROM fotos WHERE galeria_fotos = ?`;
 
 //`INSERT INTO fotos (id_fotos, file, galeria_fotos) VALUES (?, ?, ?)`;
 export const postFotosSQL =`INSERT INTO fotos (file, ratio, galeria_fotos) VALUES (?, ?, ?)`;

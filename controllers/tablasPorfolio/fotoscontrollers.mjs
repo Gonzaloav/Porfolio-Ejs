@@ -9,6 +9,7 @@ export function postFotosController(request, response) {
           [
               request.body.id_fotos,
               request.body.file,
+              request.body.ratio,
               request.body.galeria_fotos,
           ],
           (err)=>{
@@ -25,7 +26,7 @@ export function postFotosController(request, response) {
 export function getAllFotosController(request, response) {
     try {
       db.all(
-        getAllFotosSQL, // response.locals.authorization.id_fotos,
+        getAllFotosSQL, 
           (err,data)=>{
               if ( err ) throw err
               return data
