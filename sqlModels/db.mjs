@@ -35,7 +35,8 @@ db.run(`
         IF NOT EXISTS
         fotos(
             id_fotos INTEGER PRIMARY KEY,
-             file VARCHAR (255) NOT NULL,      
+             file VARCHAR (255) NOT NULL,
+             ratio CHAR(5),
              galeria_fotos INTEGER NOT NULL
              
         )
