@@ -44,6 +44,11 @@ app.get("/porfolio", function (req, res) {
   res.render("./paginas/porfolio");
 });
 
+// Página Porfolio/FotoAmpliada
+app.get("/porfolio/fotoampliada", function (req, res) {
+  res.render("./paginas/porfolio/fotoampliada");
+});
+
 // Formulario para recibir las fotos desde la base de datos. 
 
 app.get("/photos/new", function (req, res) {
