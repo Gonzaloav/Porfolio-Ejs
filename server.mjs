@@ -55,12 +55,13 @@ app.get("/photos/new", function (req, res) {
 app.post("/photos/new", upload.array('file'), function (req, res) {
 //console.log("Files:", req.files);     console.log("Body:", req.body)
   req.files.forEach(
-    file => db.run(postFotosSQL,[file.filename,req.body.galeria_fotos], 
+    file => db.run(postFotosSQL,[file.filename,req.body.galeria_fotos, req.body.ratio], 
       function (err) {
         if (err) console.error(err)
     })
   )
   res.sendStatus(201)
+  console.log(req.body);
 })
 
 // Galería ejemplo
