@@ -14,11 +14,14 @@ const validHtmlImageFormats = [
 ]
 // Almacenará la información recopilada sobre el fichero.
 const imagesData = []
+let imagesReady = 0
 
 /**  Obtenemos acceso en el DOM a los elementos HTML que deseamos controlar 
  desde este script.*/
 const input = document.querySelector('#photos_input')
 const imagePreviewArea = document.querySelector('#img_preview')
+const imageDataInput = document.querySelector("#photos_data_input")
+const submitButton = document.querySelector("#submit_button")
 
 /** Añade información del tamaño de la imagen.
 Se ejecuta una vez finalice la carga de la imagen en el elemento img.*/
@@ -47,10 +50,15 @@ function imageLoadHandler (imageHTMLElement, imageIdx) {
             ratio = "16/9"
             break;                         
         default:
-            ratio = "custom"
+            ratio = "cust"
             break;
     }
     imagesData[imageIdx].ratio = ratio
+    imagesReady++
+    if ( imagesReady === input.files.length ) {
+        imageDataInput.value = JSON.stringify(imagesData)
+        submitButton.disabled = false
+    }
 }
 
 function proccesImage(image, imageIdx) {
@@ -82,6 +90,11 @@ function proccesImage(image, imageIdx) {
 
 /** Se ejecuta cuando el usuario selecciona un fichero.*/
 function selectFileHandler () {
+
+    imagesReady = 0;
+    imagePreviewArea.innerHTML="";
+    submitButton.disabled = true;
+
     [...input.files].forEach(
         (image,idx) => {
             proccesImage(image, idx)
