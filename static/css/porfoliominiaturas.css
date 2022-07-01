@@ -1,13 +1,7 @@
-
-
 .Img {
-  display: flex;
   width: 20%;
-  border-radius: 5px;
-  margin:2px;
- 
+  margin: 2px;
 }
-
 .Galeria {
   display: flex;
   flex-direction: row;
@@ -15,13 +9,37 @@
 
 .Fila {
   display: flex;
-  width: 18%;
+  width: 100%;
+}
+
+.Img >.wrapper34 {   
+  width:  calc(20% * 3 / 4);   
   margin: 2px;
 }
 
-/**
-body {   width: 100vw;   height: 100vh;    background-color: black;  margin:0px;  }
+.Img >.wrapper43 {   
+  width:  calc(20% * 4 / 3);   
+  margin: 2px;
+} 
 
-.wrapper {  margin: 2px;  }   .wrapper34 {   width:  calc(20% * 3 / 4);   }
+.Img >.wrapper23 {
+  width:  calc(20% * 2 / 3);   
+  margin: 2px;
+}  
+.Img >.wrapper32 {
+  width:  calc(20% * 3 / 2);   
+  margin: 2px;
+} 
 
-.wrapper43 {   width:  calc(20% * 4 / 3);   }   */
+.Img >.wrapper1 {
+  width:  calc(20% * 1 / 1);   
+  margin: 2px;
+} 
+
+.Img >.wrapper169 {
+  width:  calc(20% * 16 / 9);   
+  margin: 2px;
+} 
+
+
+
