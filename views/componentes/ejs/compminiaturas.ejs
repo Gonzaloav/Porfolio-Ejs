@@ -9,7 +9,7 @@
 
       <div class="Fila">
         <% fila.forEach(function(foto) { %>
-          <div class="Img <%= foto.ratio %>">
+          <div class="Ratio <%= foto.ratio %>">
               <img src="/photos/<%= foto.file %>" alt="<%= foto.file %>">
           </div>
         <% }); %>

@@ -32,22 +32,22 @@ function imageLoadHandler (imageHTMLElement, imageIdx) {
         (imageHTMLElement.naturalWidth / imageHTMLElement.naturalHeight).toFixed(2)
     ) {
         case (4/3).toFixed(2):
-            ratio = "4/3"
+            ratio = "r43" 
             break;
         case (3/4).toFixed(2):
-            ratio = "3/4"
+            ratio = "r34"
             break;
         case (2/3).toFixed(2):
-            ratio = "2/3"
+            ratio = "r23"
             break;
         case (3/2).toFixed(2):
-            ratio = "3/2"
+            ratio = "r32"
             break;
         case (1):
-            ratio = "1/1"
+            ratio = "r11"
             break;
         case (16/9).toFixed(2):
-            ratio = "16/9"
+            ratio = "r169"
             break;                         
         default:
             ratio = "cust"
