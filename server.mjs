@@ -61,7 +61,7 @@ app.post("/photos/new", upload.array('file'), function (req, res) {
 //console.log("Files:", req.files);     console.log("Body:", req.body)
   const datosFotos = JSON.parse(req.body.photos_ratios)
   req.files.forEach(
-    (file, idx) => db.run(postFotosSQL,[file.filename, datosFotos[idx].ratio, req.body.galeria_fotos], 
+    (file, idx) => db.run(postFotosSQL,[file.filename, datosFotos[idx].ratio, req.body.galeria_fotos, idx], 
       function (err) {
         if (err) console.error(err)
     })
@@ -106,8 +106,8 @@ app.get("/ejemploporfoliofilas/:galeria_fotos", function (req, res) {
 app.post(PATH_FREFIX + "/porfolio/foto/", jsonParser, postFotosController);
 
 
-app.listen(3000);
-console.log("3000 este es el puerto mágico");
+app.listen(process.env.PORT | 3000);
+console.log(`${process.env.PORT | 3000} este es el puerto mágico`);
 
 // http://localhost:3000/
 

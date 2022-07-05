@@ -37,7 +37,8 @@ db.run(`
             id_fotos INTEGER PRIMARY KEY,
              file VARCHAR (255) NOT NULL,
              ratio CHAR(5),
-             galeria_fotos INTEGER NOT NULL
+             galeria_fotos INTEGER NOT NULL,
+             orden INTEGER NOT NULL
              
         )
 `);

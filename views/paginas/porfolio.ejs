@@ -13,16 +13,7 @@
   </header>
 
   <main>
-    <!-- Colocamos las fotos en cada fila. -->
-  <ul>
-    <% fotos.forEach(function(foto) { %>
-      <img src="/photos/<%= foto.file %>" alt="...">
-      <li>
-        <%= foto.id_foto %>
-          <%= foto.galeria_foto %>
-      </li>
-      <% }); %>
-  </ul>
+    <%- include ('../componentes/ejs/compporfolio') %>
   </main>
 
   <footer>
