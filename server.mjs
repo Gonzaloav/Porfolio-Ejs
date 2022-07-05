@@ -2,17 +2,17 @@ import express from "express";
 import db from "./sqlModels/db.mjs";
 import multer from 'multer' 
 
-const UPLOADS_FOLDER = "./uploads/"
+//const UPLOADS_FOLDER = "./uploads/"
 const upload = multer({ dest: UPLOADS_FOLDER })
 
 import { getAllFotosSQL, postFotosSQL, getGalleryFotosSQL } from "./sqlModels/porfolioSQL/fotosSqlModels.mjs";
-import { postFotosController } from "./controllers/tablasPorfolio/fotoscontrollers.mjs";
+//import { postFotosController } from "./controllers/tablasPorfolio/fotoscontrollers.mjs";
 
 // Creamos enlace que necesitamos
 
-const PATH_FREFIX = "/api/v0.0";
+//const PATH_FREFIX = "/api/v0.0";
 const app = express();
-const jsonParser = express.json();
+//const jsonParser = express.json();
 
 // establecer el motor de visualización en ejs. (use res.render) para cargar un archivo de  "ejs view ""
 app.set("view engine", "ejs");
@@ -46,9 +46,10 @@ app.get("/porfolio", function (req, res) {
 });
 
 // Página Porfolio/FotoAmpliada
-app.get("/porfolio/fotoampliada", function (req, res) {
+/*app.get("/porfolio/fotoampliada", function (req, res) {
   res.render("./paginas/porfolio/fotoampliada");
 });
+*/
 
 // Formulario para recibir las fotos desde la base de datos. 
 
@@ -71,7 +72,7 @@ app.post("/photos/new", upload.array('file'), function (req, res) {
 })
 
 // Galería ejemplo
-app.get("/ejemploporfolio", function (req, res) {
+/*app.get("/ejemploporfolio", function (req, res) {
   db.all(
     getAllFotosSQL, // response.locals.authorization.id_fotos,
     (err, fotos) => {
@@ -81,6 +82,7 @@ app.get("/ejemploporfolio", function (req, res) {
     }
   );
 });
+*/
 
 // Galería ejemplo en filas
 app.get("/ejemploporfoliofilas/:galeria_fotos", function (req, res) {
@@ -104,10 +106,11 @@ app.get("/ejemploporfoliofilas/:galeria_fotos", function (req, res) {
   );
 });
 
-app.post(PATH_FREFIX + "/porfolio/foto/", jsonParser, postFotosController);
+//app.post(PATH_FREFIX + "/porfolio/foto/", jsonParser, postFotosController);
 
 
 app.listen(process.env.PORT | 3000);
+
 console.log(`${process.env.PORT | 3000} este es el puerto mágico`);
 
 // http://localhost:3000/
