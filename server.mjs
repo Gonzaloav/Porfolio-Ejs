@@ -26,6 +26,7 @@ app.use("/photos/", express.static("./uploads/"));
 
 // Página index
 app.get("/", function (req, res) {
+  console.log("Resquest arrives");
   res.render("./paginas/index");
 });
 
