@@ -2,7 +2,7 @@ import express from "express";
 import db from "./sqlModels/db.mjs";
 import multer from 'multer' 
 
-//const UPLOADS_FOLDER = "./uploads/"
+const UPLOADS_FOLDER = "./uploads/"
 const upload = multer({ dest: UPLOADS_FOLDER })
 
 import { getAllFotosSQL, postFotosSQL, getGalleryFotosSQL } from "./sqlModels/porfolioSQL/fotosSqlModels.mjs";
