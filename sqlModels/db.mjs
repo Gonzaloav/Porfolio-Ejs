@@ -4,7 +4,7 @@ export const db = new sqlite3.Database('./porfolio.db', (err) => {
     if (err) {
         throw err.message;
     }
-    console.log('Conencta el proyecto de tareas con la base de datos');
+    console.log('Conecta el proyecto de tareas con la base de datos');
 });
 
 // tres tablas para porfolio.
