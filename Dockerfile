@@ -6,6 +6,6 @@ WORKDIR /usr/src/app/
 COPY . .
 
 RUN npm install --omit=dev
-RUN rm .gitignore Retrato documents portfolio.db README.md -rf
+RUN rm .gitignore Retrato document portfolio.db README.md -rf
 
 ENTRYPOINT [ "npm", "start" ]
